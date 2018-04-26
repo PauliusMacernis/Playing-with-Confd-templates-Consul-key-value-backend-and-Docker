@@ -3,3 +3,5 @@
 set -e
 
 confd -onetime -backend env
+
+trap : TERM INT; sleep infinity & wait
