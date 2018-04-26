@@ -9,3 +9,8 @@ RUN chmod +x /usr/local/bin/confd \
 
 COPY confd-configs/conf.d/ /etc/confd/conf.d/
 COPY confd-configs/templates/ /etc/confd/templates/
+COPY start.sh /usr/local/bin/start.sh
+
+RUN chmod +x /usr/local/bin/start.sh
+
+CMD ["/usr/local/bin/start.sh"]
