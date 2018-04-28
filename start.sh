@@ -4,4 +4,8 @@ set -e
 
 confd -onetime -backend env
 
-trap : TERM INT; sleep infinity & wait
+/usr/bin/caddy -validate --agree=true --conf=/etc/Caddyfile
+
+exec /usr/bin/caddy --agree=true --conf=/etc/Caddyfile
+
+#trap : TERM INT; sleep infinity & wait
